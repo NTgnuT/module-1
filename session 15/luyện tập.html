@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Viết chương trình tạo hàm tính diện tích và chu vi hình tròn
+        // function circle(radius) {
+        //     let area = Math.PI * radius * radius;
+        //     let perimeter = 2 * Math.PI * radius;
+        //     return [area, perimeter];
+        // }
+        // console.log(circle(5));
+        // console.log(circle(10));
+        // console.log(circle(15));
+
+
+        // Bài 4: Viết chương trình cho người dùng nhập vào một số, 
+        // kiểm tra xem số đưa vào có phải nguyên dương không ? 
+        // Nếu đung trả vè true, sai trả về false
+
+
+        // function checkNumber(n) {
+        //     return (Number.isInteger(n) && n > 0);
+        // }
+        // console.log(checkNumber(n));
+
+        // let arr1 = [7, 12, 6, -1, 20, 56, 89];
+
+        // function minArray(arr) {
+        //     let min = arr[0];
+        //     for (i = 0; i < arr.length; i++) {
+        //         if (min > arr[i]) {
+        //             min = arr[i];
+        //         }
+        //     }
+        //     return min;
+        // }
+        // console.log(minArray(arr1));
+
+        // // Chuyển từ độ F sang độ C;
+        // function changeCelsius(fahrenheit) {
+        //     celsius = (fahrenheit - 32) / 1.8;
+        //     return celsius;
+        // }
+        // console.log(changeCelsius(77));
+
+        // // Chuyển từ độ C sang độ F;
+        // function changeFahrenheit(celsius) {
+        //     fahrenheit = celsius * 1.8 + 32;
+        //     return fahrenheit;
+        // }
+        // console.log(changeFahrenheit(25));
+
+
+        //Tạo hàm tính tổng các phần tử trong mảng
+        // let arr1 = [7, 12, 6, -1, 20, 56, 89];
+
+        // function sumArray(arr) {
+        //     let sum = 0;
+        //     for (i = 0; i < arr.length; i++) {
+        //         sum += arr[i];
+        //     }
+        //     return sum;
+        // }
+        // console.log(sumArray(arr1));
+
+        // Tạo hàm biến ký tự đầu tiên ở mỗi từ thành chữ in hoa
+        function capitalize(str) {
+            let change = str.toLowerCase().split(' ');
+            for (i = 0; i < change.length; i++) {
+                let chuoi = change[i].split("")
+
+                chuoi[0] = chuoi[0].toUpperCase()
+
+                change[i] = chuoi.join("")
+            }
+            return change.join(" ")
+        }
+
+        let a = 'hello WOrld!'
+        console.log(capitalize(a));
+    </script>
+
+</body>
+
+</html>

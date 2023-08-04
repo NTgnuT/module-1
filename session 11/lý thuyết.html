@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box"></div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script>
+        // Cấu trúc lặp for: biết trước số lần lặp
+        for (let i = 0; i < 10; i++) {
+            // khối code thực thi khi thỏa mãn điều kiện lặp
+        }
+
+        // let count = 1;
+        // for (i = 2; i < 100; i = i + 2) {
+        //     console.log('Lần lặp thứ' + count);
+        //     count++;
+        // }
+
+        // kết hợp js vào html để thay đổi nội dung của thẻ html
+        // let tbody = document.getElementById('table-body');
+        // tbody.innerHTML = '<tr><td>1</td><td>Tùng</td></tr>';
+        let str = "";
+        for (i = 1; i <= 10; i++) {
+            str = str + `<tr><td>${i} x 5 = ${i * 5}</td></tr>`
+        }
+
+        let box = document.getElementById('box');
+        box.innerHTML = ('đây là nội dung của box');
+
+        // tính tổng của 100 số tự nhiên đầu tiên
+        // let sum = 0;
+        // for (i = 0; i < 100; i++) {
+        //     sum += i;
+        // }
+        // console.log(`tổng của 100 số tự nhiên đầu tiên là: ${sum}`);
+
+
+        // tính tổng của số n nhập vào;
+        // let n = Number(prompt('Nhập số tự nhiên n để tính tổng'));
+        // if (n > 0) {
+        //     let sum = 0;
+        //     for (i = 1; i <= n; i++) {
+        //         sum += i;
+        //     }
+        //     console.log(`Tổng các số vừa nhập vào là: ${sum}`)
+        // }
+
+        // Vòng lặp while: Không biết trước số lần lặp
+
+        //cho phép nhập đến khi nhập số 0
+        let n = 1;
+        while (n != 0) { // điều kiện để tiếp tục thực hiện vòng lặp
+            n = Number(prompt('Nhập vào 1 số'));
+        };
+
+        // let sum = 0;
+        // let n = 1;
+        // while (n <= 100) {
+        //     sum = sum + n;
+        //     n++;
+        // };
+
+        // Vòng lặp do ... while: vòng lặp chắc chắn chạy 1 lần
+        // do {
+        //     // Thực thi khối lệnh
+        //     n = Number(prompt('Nhập vào 1 số'));
+        // } while (n != 0); // n=0 => điều kiện while bị sai => không thực hiện và thoát
+
+
+        //break: dừng và thoát khỏi vòng lặp;
+        // for (let i = 1; i < 10; i++) {
+        //     if (i > 5) {
+        //         break;
+        //     }
+        //     console.log(i)
+        // }
+
+        // while(true) {
+        //     let n = Number(prompt('Nhập vào 1 số bất kì'))
+        //     if(n==0) {
+        //         break;
+        //     }
+        // }
+
+        //continue: bỏ qua toàn bộ khối lệnh bên dưới nó
+        // for (let i = 1; i < 10; i++) {
+        //     if (i == 5) {
+        //         continue;
+        //     }
+        //     console.log(i)
+        // }
+
+        // Vòng lặp lồng nhau
+        for (let i = 1; i < 10; i++) {
+            // i chạy từ 1->9
+            for (let j = 1; j < 10; j++) {
+                // Với mỗi giá trị của i , thì j chạy từ 1->9 
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

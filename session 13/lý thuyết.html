@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //cú pháp khai báo 1 mảng
+        let array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        console.log(array);
+        // khai báo mảng sử dụng từ khóa new
+        // let arr = new Array(8, 9, 10, 11)
+        // console.log(arr);
+
+        // lấy ra phần tử tại vị trí index = 7 ở mảng array;
+        // let fix = array[7] = 10;
+        // console.log(array);
+
+        // for i (interator)
+        // for in
+        /*for (let item in array) { // dùng để lấy ra lần lượt các chỉ số 
+            console.log(item);   // phần tử trong mảng
+        }
+        for (let item in array) { // dùng để lấy ra lần lượt các 
+            console.log(array[item]);   // phần tử trong mảng
+        } */
+
+        //tính tổng các phần tử trong mảng
+        let sum = 0;
+        for (const key in array) {
+            sum += array[key];
+        }
+        console.log(sum);
+
+        // for of
+        //tính tích của các phần tử trong mảng
+        /*let multi = 1;
+        for (const element of array) { //lấy ra các phần tử trong mảng
+            console.log(element); // xem giá trị 
+            multi *= element;
+        }
+        console.log(multi); */
+
+        // for i
+        // for (let i = 0; i < array.length; i++) {
+        //     console.log(array[i]);
+        // }
+
+        // for (let i = 0; i < array.length; i++) {
+        //     if (array[i] % 3 !== 0) {
+        //         continue;
+        //     }
+        //     console.log(array[i]);
+        // }
+
+        let arrayAnimal = [];
+        // thêm mới 1 phần tử vào cuối mảng
+        arrayAnimal.push('dog');
+        arrayAnimal.push('cat');
+        arrayAnimal.push('fish');
+        arrayAnimal.push('bear');
+        console.log(arrayAnimal);
+        // cách push hoạt động
+        arrayAnimal[arrayAnimal.length] = 'cow';
+        console.log(arrayAnimal);
+        let arrayAnts = ['mouse', 'monkey', 'pig']
+        for (let i = 0; i < arrayAnts.length; i++) {
+            arrayAnimal[arrayAnimal.length] = arrayAnts[i];
+        }
+        console.log(arrayAnimal);
+
+        // join: chuyển mảng thành chuỗi
+        let arrJoin = [1, 2, 3, 4];
+        let string = arrJoin.join(' ');
+        console.log(string);
+
+        // reverse: đảo ngược phần tử trong mảng.
+        console.log(arrJoin.reverse());
+
+        // sort: sắp xếp phẩn tử trong mảng theo thứ tự
+        console.log(arrayAnimal.sort());
+
+        //concat:nối cái phần tử trong mảng với nhau
+        console.log(arrJoin.concat(array, [1, 2, 3, 4]));
+
+        //pop: lấy và xóa phần tử cuối cùng của mảng
+        let elementDelete = arrJoin.pop();
+        console.log(elementDelete);
+
+        //mảng 2 chiều: 
+        let arr2side = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+        console.log(arr2side[0][2]);
+
+        let arr2 = [[5, 8, 9, 2, 10, 3], [4, 2, 6, 8, 1, 0], [5, 9, 11, 2, 4, 6]];
+        //duyệt mảng 2 chiều
+        for (i = 0; i < arr2.length; i++) {
+            for (j = 0; j < arr2[i].length; j++) {
+                console.log(arr2[i][j]);
+            }
+        }
+
+        //tạo 1 bảng hai chiều m x n với các phần tử 
+        //có giá trị ngẫu nhiên từ 1 -> 99
+        let m = 10; n = 15;
+        let arrRandom = new Array(m);
+        console.log(arrRandom);
+        for (i = 0; i < m; i++) {
+            arrRandom[i] = new Array(n);
+            for (j = 0; j < n; j++) {
+                //tạo các giá trị ngẫu nhiên cho các phần tử
+                arrRandom[i][j] = Math.round(Math.random() * 98 + 1)
+            }
+        }
+        console.log(arrRandom);
+    </script>
+</body>
+
+</html>

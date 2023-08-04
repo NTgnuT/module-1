@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let n = prompt('Nhập 1 dãy số bất kì ngăn cách bằng dấu ,');
+        let change = n.split(",");// chuyển từ chuỗi sang mảng
+        console.log(change);// in ra để kiểm tra
+        let max = change[0];// giả sử số đầu tiên trong dãy số là số lớn nhất 
+        for (i = 0; i < change.length; i++) {
+            if (max < change[i]) {
+                max = change[i];
+            }
+        }
+        console.log(max);
+    </script>
+</body>
+
+</html>

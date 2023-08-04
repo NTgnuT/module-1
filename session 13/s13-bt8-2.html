@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // b1:nhập vào;
+        // b2: duyệt từng kí tự của chuỗi
+        // nếu phát hiện 2 kí tự chẵn push thêm dấu
+        let string = prompt("Nhap vao 1 chuoi so bat ky");//24568
+        let arr = [];
+        for (let i = 0; i < string.length; i++) {
+            arr.push(string.charAt(i));
+            if (string.charAt(i) % 2 == 0 && string.charAt(i + 1) % 2 == 0 && i !== string.length - 1) {
+                arr.push("-");
+            }
+        }
+        console.log(arr.join(""))
+    </script>
+</body>
+
+</html>

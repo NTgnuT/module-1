@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let count = 1;
+        let number;
+
+        let random = Math.round(Math.random() * 9) + 1;
+        console.log(random);
+        while (count <= 3) {
+            number = +prompt("Nhập số muốn đoán  1-10");
+            if (count == 3) {
+                // nếu lượt đoán thứ 3
+                if (number == random) {
+                    alert("you win");
+                    break;
+                } else {
+                    alert("you lose");
+                }
+            } else {
+                // chưa đến lượt thứ 3
+                if (number == random) {
+                    alert("you win");
+                    break;
+                } else if (number < random) {
+                    alert(`Lớn hơn ${number} , bạn còn ${3 - count} lần`);
+                } else {
+                    alert(`Bé hơn ${number} , bạn còn ${3 - count} lần`);
+                }
+            }
+            count++; //sau mỗi lần đoán thì sẽ tăng 1 giá trị
+        }
+    </script>
+</body>
+
+</html>

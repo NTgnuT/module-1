@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        <script src=""></script> <!--xuống dòng-->
+    </pre>
+
+
+    <script>
+        // Nhập vào các số nguyên đến khi nhập số 0 thì dừng lại
+        // hiển thị tổng của các số vừa nhập.
+        /* let n = 1; 
+        let sum = 0; 
+        while (n != 0) {
+            // nhập 1 số 
+            n = +prompt('Nhập 1 số nguyên')
+            sum += n
+        }
+        // dừng vòng lặp - hiển thị ra tổng 
+        alert('Tổng các số vừa nhập là: ' + sum) */
+
+
+        // số hoàn hảo: tổng các ước nhỏ hơn nó = chính nó;
+        // kiểm tra 1 số nhập vào có phải số hoàn hảo không.
+        // b1: nhập vào 1 số
+        // b2: kiểm tra từ 1 -> chính nó, nếu là ước của số đó
+        // thì thực hiện tính tổng
+        // b3: kết thúc vòng lặp tiến hành so sánh tổng thu được
+        // với chính nó và đưa ra kết luận.
+        /* let n = +prompt('nhập vào 1 số');
+        let sum = 0;
+        for (i = 1; i < n; i++) {
+            if (n % i == 0) {
+                sum += i
+            }
+        }
+
+        if (sum == n) {
+            console.log(`số ${n} là số hoàn hảo`)
+        } else {
+            console.log(`số ${n} không phải là số hoàn hảo`)
+        } */
+
+
+        
+
+
+    </script>
+
+    <!--<pre><script> // bài tập s12-2-3
+            for (let i = 1; i <= 5; i++) {
+                    for (let j = 1; j <= 5; j++) {
+                        if (i <= j) { // i>=j || i+j>=6 || i+j<=6
+                            document.write('*')
+                        } else {
+                            document.write(' ')
+                        }
+                    }
+                    document.writeln();
+                }
+        </script>
+    </pre>-->
+</body>
+
+</html>
