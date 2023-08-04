@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <h2>Caculator</h2>
+        <input type="text" id="in1">
+        <input type="text" id="in2"><br>
+        <button type="button" onclick="add()">Addition(+)</button>
+        <button type="button" onclick="sub()">Subtraction(-)</button>
+        <button type="button" onclick="mul()">Multiplication(*)</button>
+        <button type="button" onclick="div()">Division(/)</button><br>
+        <p id="ketqua"></p>
+    </form>
+
+    <script>
+        function add() {
+            let number1 = Number(document.getElementById("in1").value);
+            let number2 = Number(document.getElementById("in2").value);
+            let all = number1 + number2;
+            document.getElementById("ketqua").innerHTML = "Kết quả: " + all
+        };
+        function sub() {
+            let number1 = Number(document.getElementById("in1").value);
+            let number2 = Number(document.getElementById("in2").value);
+            let all = number1 - number2;
+            document.getElementById("ketqua").innerHTML = "Kết quả: " + all
+        };
+        function mul() {
+            let number1 = Number(document.getElementById("in1").value);
+            let number2 = Number(document.getElementById("in2").value);
+            let all = number1 * number2;
+            document.getElementById("ketqua").innerHTML = "Kết quả: " + all
+        };
+        function div() {
+            let number1 = Number(document.getElementById("in1").value);
+            let number2 = Number(document.getElementById("in2").value);
+            let all = number1 / number2;
+            document.getElementById("ketqua").innerHTML = "Kết quả: " + all
+        };
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .a {
+            text-align: center;
+        }
+
+        .f>select,
+        .t>select {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <div class="a">
+            <label for="in">Amount</label><br>
+            <input type="text" id="in">
+        </div>
+
+        <div class="f">
+            <label for="from">From Currency</label><br>
+            <select name="" id="from">
+                <option value="USA">USA</option>
+                <option value="VietNam" selected>VietNam</option>
+            </select>
+        </div>
+
+        <div class="t">
+            <label for="to">To Currency</label><br>
+            <select name="" id="to">
+                <option value="USD" selected>USD</option>
+            </select>
+        </div>
+
+        <button type="button" onclick="changer()">Convert</button>
+        <p id="cv"></p>
+    </form>
+
+    <script>
+        function changer() {
+            const TIGIA = 1 / 23000;
+            let inputIn = document.getElementById("in").value;
+            let usd = inputIn * TIGIA;
+            document.getElementById("cv").innerHTML = "Chuyển đổi: " + usd;
+        }
+
+    </script>
+</body>
+
+</html>

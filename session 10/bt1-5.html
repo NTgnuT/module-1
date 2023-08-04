@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let input1 = Number(prompt('Nhập điểm bài kiểm tra'))
+        let input2 = Number(prompt('Nhập điểm thi giữa kỳ'))
+        let input3 = Number(prompt('Nhập điểm thi cuối kỳ'))
+        let dtb = (input1 + input2 * 2 + input3 * 3) / 6;
+        console.log(dtb);
+        if (dtb >= 8.5) {
+            alert('Xếp loại học lực Giỏi')
+        } else if (dtb >= 6.5) {
+            alert('Xếp loại học lực Khá')
+        } else if (dtb >= 5) {
+            alert('Xếp loại học lực TBK')
+        } else if (dtb >= 3.5) {
+            alert('Xếp loại học lực Trung Bình')
+        } else {
+            alert('Xếp loại học lực Yếu')
+        };
+    </script>
+</body>
+
+</html>
