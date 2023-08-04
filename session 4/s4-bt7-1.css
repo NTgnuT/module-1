@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mini{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    background-color: lightgray;
+    color: white;
+    /* text-align: center; */
+    line-height: 200px;
+    font-size: xx-large;
+    font-weight: bold;
+    transition: all 10s ease-in-out ;
+}
+
+
+/* .mini:hover{
+    background-color: gray;
+    transition: all 1s ease-in-out;
+} */
+
+/* .mini:hover{
+    background-color: skyblue;
+} */
+
+/* .mini:hover{
+    width: 350px;
+    height: 250px;
+    transition: all 1s ease-in-out;
+} */
+
+/* .mini:hover{
+    transform: scale(80%);
+    transition: all 0.1s ease-in-out;
+} */
+
+.mini:hover{
+    rotate: 18000deg;
+    transition: all 0.5s ease-in-out;
+}
+
+/* .mini:hover{
+    border-radius: 30%;
+} */
+
+/* .mini:hover{
+    border: 20px solid blue;    
+} */
+

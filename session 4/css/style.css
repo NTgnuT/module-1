@@ -1,0 +1,85 @@
+.box{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    color: aliceblues;
+    border-radius: 50%;  
+    /* background-color: rgb(34, 111, 212); */
+    /* background-color: hsla(100, 50%, 50%, 1); */
+    background-color: transparent; /*màu trong suốt*/
+    /* độ dốc tuyến tính */
+    /* background: linear-gradient(45deg,red,blue,green); */
+    /* hướng đổ(to right/to bottom/màu đổ) */
+    /* độ dốc xuyên tâm */
+    background: radial-gradient(circle at left, rgb(33, 248, 255), rgb(255, 255, 0), rgb(255, 0, 230));
+    /* đổ bóng */
+    box-shadow: 50px 20px 10px 0px black;
+    /* hướng đổ(trái/phải)/hướng(trên/dưới)/độ mờ/kích thước bóng/màu */
+
+}
+
+.heading{
+    font-size: 50px;
+    margin-top: 50px;
+    font-weight: 900;
+    text-shadow: 20px 10px 1px green;
+}
+
+/* .anh{
+    width: 1000px;
+    height: 700px;
+    background: right url(./anh1.jpg) no-repeat, left url(./anh2.jpg) no-repeat, url(./anh3.jpg) no-repeat;
+} */
+
+.element{
+    width: 100px;
+    background-color: blue;
+    margin-top: 5px;
+    text-align: center;
+    /* xoay phần tử */
+    /* transform: rotate(30deg) scale(1); */
+    /* transform: translate(100px,50px); /dịch chuyển theo trục x,y */
+}
+
+.transition{
+    width: 200px;
+    height: 200px;
+    /* background-color: rgb(86, 247, 247); */
+    background-image: url(./anh3.jpg);
+    text-align: center;
+    line-height: 200px;
+    border-radius: 50%;    
+    /* transition: all 2s ease-in-out ; */
+    animation: move 4s infinite 1s 
+    
+}
+
+/* .transition:hover{
+    width: 600px;
+    height: 400px;
+    line-height: 400px;  
+    transform: translate(200px);
+    transform: rotate(180deg);
+}  */
+
+/* @keyframes move {
+    0%{
+        transform: translate(0px);
+    }
+    25%{
+        transform: translate(200px) rotate(45deg);
+    }
+    50%{
+        transform: translateY(100px) ;
+    }
+    75%{
+        transform: translateY(-200px);
+    }
+    100%{
+        transform: translate(0px);
+    }
+} */
+
+
+

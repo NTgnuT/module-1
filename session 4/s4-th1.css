@@ -1,0 +1,25 @@
+.parent{
+    width: 700px;
+    height: 100px;
+    background-color: lightgrey;
+    overflow: hidden;
+}
+.child{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:xx-large;
+    font-weight: 900;
+    color: rgb(22, 192, 135);
+    animation: run 5s infinite 1s
+}
+
+@keyframes run {
+    0%{
+        translate: 0;
+    }
+    50%{
+        translate: 700px;
+    }
+    100%{
+        translate: 0;
+    }
+}

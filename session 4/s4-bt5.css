@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    width: 100px ;
+    background-color: rgb(62, 62, 250);
+    margin:10px 10px ;
+    text-align: left;
+    transition: all 1s ease-in-out;
+}
+
+i:active+ul{
+    transform: translate(-95px);
+}
