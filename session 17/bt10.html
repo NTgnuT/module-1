@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // xây dựng lớp mô tả điện thoại
+        // Có một thông số về trạng thái pin tính bằng đơn vị số nguyên(tối đa 100 đv).
+
+        // Sau mỗi lần sử dụng một chức năng, năng lượng pin sẽ giảm đi một đơn vị.
+        // Các chức năng không thể hoạt động nếu điện thoại chưa bật.
+
+
+        class Mobile {
+            pin;
+            typingMess = ''; // Có một vùng nhớ dùng để lưu tin nhắn đang soạn thảo.
+            inbox = []; // Có một vùng nhớ dùng để lưu tin nhắn trong hộp thư đến.
+            outbox = []; // Có một vùng nhớ dùng để lưu tin nhắn đã gửi.
+            startus = true;
+            constructor(pin) {
+                this.pin = pin;
+                if (pin < 1 || pin > 100) {
+                    this.pin = 80;
+                } else {
+                    this.pin = pin
+                }
+
+                // Có chức năng kiểm tra trạng thái điện thoại bật hay tắt.
+                this.checkOnOff = () => {
+                    if (!this.startus) {
+                        return;
+                    }
+                    this.pin--;
+                    return this.startus;
+                }
+
+                // Có chức năng bật và tắt điện thoại.
+                this.turnOnOff = (value) => {
+                    if (!this.startus) {
+                        return;
+                    }
+                    this.pin--;
+                    this.startus = value;
+                }
+
+                // Có chức năng sạc pin điện thoại.
+                this.sacPin = () => {
+                    if (pin = 100) {
+                        return this.pin;
+                    }
+                    this.pin++;
+                }
+
+                // Có chức năng soạn tin nhắn.
+                this.textMess = (value) => {
+                    if (!this.startus) {
+                        return;
+                    }
+                    this.pin--;
+                    this.typingMess = value;
+                }
+
+                // Có chức năng nhận tin nhắn từ một chiếc mobile khác.
+                this.nhanTinNhan = (value) => {
+                    if (!this.startus) {
+                        return;
+                    }
+                    this.pin--;
+                    this.inbox.push(value);
+                }
+
+                // Có chức năng gửi tin nhắn tới một chiếc mobile khác.
+                this.guiTinNhan = (phone) => {
+                    if (!this.startus) {
+                        return;
+                    }
+                    this.pin--;
+                    this.outbox.push(this.typingMess);
+                    phone.nhanTinNhan(this.typingMess);
+                    this.typingMess = '';
+                }
+
+                // Có chức năng xem tin trong hộp thư đến.
+                this.checkMessIn = () => {
+                    if (!this.startus) {
+                        return;
+                    }
+                    this.pin--;
+                    return this.inbox;
+                }
+
+                // Có chức năng xem tin đã gửi.
+                this.checkMessOut = () => {
+                    if (!this.startus) {
+                        return;
+                    }
+                    this.pin--;
+                    return this.outbox;
+                }
+            }
+        }
+
+        // Khởi tạo các đối tượng điện thoại và thực hiện kịch bản sau:
+        // Có một chiếc điện thoại nokia và một chiếc iphone
+        let nokia = new Mobile();
+        let iphone = new Mobile();
+
+        // Chiếc điện thoại nokia soạn tin nhắn với nội dung bất kỳ 
+        nokia.textMess('Xin chào bạn');
+        // và gửi cho chiếc iphone Chiếc iphone kiểm tra inbox 
+        nokia.guiTinNhan(iphone);
+        // và hiển thị tin đó.
+        console.log(iphone.checkMessIn());
+
+    </script>
+</body>
+
+</html>

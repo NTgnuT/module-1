@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="input">
+    <button onclick="handleSubmit()">Submit</button>
+
+
+
+    <script>
+        // Bài 4: Cho người dùng nhập vào chuỗi kí tự.
+        // Viết hàm kiểm tra xem tần suất xuất hiện của mỗi ký tự 
+        // và in ra chúng
+
+        function handleSubmit() {
+            //lấy ra giá trị của ô input
+            let value = document.getElementById('input').value
+            value = value.toLowerCase();
+
+            //tạo 1 mảng để chứa danh sách các kí tự và số lần xuất hiện
+            let array = [];//mảng 2 chiều, kí tự sẽ lưu ở phần tử 0 ở mảng con 
+
+            //duyệt từng kí tự của chuỗi trong ô input và kiểm tra
+            for (i = 0; i < value.length; i++) {
+                let index = checkExistCharacter(array, value.charAt(i));
+                if (index >= 0) {//nếu kí tự thứ i tồn tại trong mảng array
+                    // đã tồn tại kí tự phải sửa số lần xuất hiện
+                    array[index][1] += 1;
+                } else {
+                    //chưa tồn tại thì thêm mới vào mảng array 1 phần tử
+                    //có số lần xuất hiện là 1
+                    array.push(value.charAt(i), 1);
+                }
+            }
+        }
+
+        //in ra kết quả
+        for (let i = 0; i < array.length; i++) {
+            console.log(`kí tự ${array[i][0]} xuất hiện ${array[i][1]} lần `);
+        }
+
+        //kiểm tra tồn tại của 1 kí tự trong 1 mảng và trả về vị trí 
+        //của phần tử nếu tồn tại, nếu không tồn tại trả về -1
+        function checkExistCharacter(arr, char) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i][0] == char) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        //hệ thống lại kiến thức mảng 
+        //1 mảng có thành phần vị trí (index) phần tử (element)
+        //truy xuất: lấy ra 1 phần tử của mảng array tại vị trí index: array[index]
+        //tương tác 2 chiều là có thể thay đổi giá trị bằng phép gán
+        //duyệt mảng: for in, for of, for i
+        //các phương thức của mảng:
+        //splice: xóa 1 hoặc nhiều phần tử + thêm mới 1 hoặc nhiều phần tử
+        //từ vị trí vừa xóa;
+        //mảng nhiều chiều: trong mảng có mảng 
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // cú pháp khỏi tạo đối tượng 
+        // cách 1:
+        let obj = {
+            name: 'Nguyễn A',
+            age: 20,
+            from: 'Ha Noi',
+            move: () => {
+                console.log('nomal');
+            }
+        };
+
+
+        // cách 2: định nghĩa giống như hàm để khai báo định nghĩa 1 lớp 
+        function students(name, age, from) {
+            console.log(this);// this đại diện cho đối tượng sinh ra từ lớp/ hàm đó 
+            this.age = age;
+            this.from = from;
+            this.fullName = name;// gán giá trị tham số name cho thuộc tính fullName
+            this.move = () => {
+            }
+        }
+
+        let obj1 = new students('Nguyễn Văn B', 21, 'Nam Định')
+
+        //cách 3: sử dụng class trong ES6
+        class Student2 {
+            // khai báo các thuộc tính
+            // fullName;
+            // age;
+            // className;
+            // maSV;
+            // tạo constructor để gán giá trị ban đầu lúc khởi tạo
+            constructor(fullName, age, className, maSV) {
+                this.fullName = fullName;
+                this.age = age;
+                this.className = className;
+                this.maSV = maSV;
+                //định nghĩa các phương thức
+                this.move = () => { };
+            }
+
+        }
+
+        // truy xuất 1 thuộc tính hoặc phương thức sử dụng dấu .
+        obj.age = 30;
+        console.log(obj);
+
+        // dùng câu lệnh for-in để truy xuất đến tất cả đối tượng
+        let person = { fname: 'John', lname: 'Doe', age: 25 }
+        for (const x in person) {
+            console.log(person[x]);
+        }
+
+
+        // tạo lớp hình học
+        class Shape {
+            constructor(color) {
+                this.color = color;
+                this.area = 0;
+                this.perimeter = 0;
+            }
+        }
+        // tạo lớp hình tam giác 
+        class Triangle extends Shape {
+            constructor(a, b, c, color) {
+                super(color);// gọi đến contructer của lớp Shape
+                this.a = a;
+                this.b = b;
+                this.c = c;
+                // tính chu vi
+                this.perimeter = this.a + this.b + this.c;
+                //tính diện tích bằng công thức heron
+                this.area = Math.sqrt(this.perimeter / 2 * (this.perimeter / 2 - a) * (this.perimeter / 2 - b) * (this.perimeter / 2 - c))
+
+                this.getPerimeter = () => {
+                    console.log(this.perimeter);
+                }
+
+                this.getArea = () => {
+                    console.log(this.area);
+                }
+            }
+        }
+        // tạo lớp hình tròn
+        class Circle extends Shape {
+            constructor(radius, color) {
+                super(color)
+                this.radius = radius;
+                this.area = this.radius ** 2 * Math.PI;
+                this.perimeter = (this.radius * 2) * Math.PI;
+            }
+        }
+        // tạo lớp hình chữ nhật
+        class Rectangle extends Shape {
+            constructor(length, width, color) {
+                super(color)
+                this.length = length;
+                this.width = width;
+                this.area = this.length * this.width;
+            }
+        }
+        //tạo lớp hình vuông
+        class Square extends Rectangle {
+            constructor(length, color) {
+                super(length, length, color)
+                this.area = this.length * this.length;
+                this.getArea = () => {
+
+                }
+            }
+        }
+
+
+        let Triangle1 = new Triangle(3, 4, 5, 'red')
+        Triangle1.getArea();
+        Triangle1.getPerimeter();
+
+
+
+    </script>
+</body>
+
+</html>
