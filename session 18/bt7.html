@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let products = [
+            { id: 1, name: "Milk", count: 100 },
+            { id: 2, name: "Yakult", count: 100 },
+            { id: 3, name: "Butter", count: 100 },
+        ];
+
+        //Thêm đối tượng có các thuộc tính tương tự 
+        //các đối tượng có trong mảng “products”
+        let newProducts = {
+            id: 4, name: "Water", count: 50
+        }
+        products.push(newProducts);
+
+        //Xóa đối tượng có id là 2
+        let findId2 = products.findIndex((element) => {
+            return 2 == element.id;
+        })
+        console.log(findId2);
+        products.splice(1, 1)
+
+        //Truy vấn đến đối tượng có id là 3, 
+        //sau đó cập nhật lại giá trị count = 0
+        let findId3 = products.findIndex((element) => {
+            return 3 == element.id;
+        })
+        console.log(findId3);
+        products[1].count = 0;
+        console.log(products);
+
+        // Cho từ khóa “Butter”. 
+        // Kiểm tra từ khóa có trong mảng “products” hay không ? 
+        // Nếu Có in toàn bộ thông tin, 
+        // nếu Không hiển thị thông báo “Không có dữ liệu bạn tìm kiếm”
+
+        let findButter = products.filter((element) => {
+            return 'Butter' == element.name;
+        })
+        console.log(findButter);
+
+
+        // Bài 2: Tạo một class Dog có những thuộc tính:
+        // Tên và tốc độ di chuyển
+        // Có khả năng thực hiện sủa
+        // Có khả năng bắt được mèo nếu tốc độ của chó lớn hơn
+        // Tạo class Cat có những thuộc tính sau:
+        // Tên và tốc dộ di chuyển
+
+        class Dog {
+            constructor(name, speed) {
+                this.name = name;
+                this.speed = speed;
+                this.sua = () => {
+                    console.log(`${this.name} gâu gâu gâu`);
+                }
+
+                this.catchCat = (cat) => {
+                    if (this.speed > cat.speed) {
+                        console.log(`${this.name} bắt được ${cat.name}`);
+                    } else {
+                        console.log(`${this.name} không bắt được ${cat.name}`);
+                    }
+                }
+            }
+        }
+
+        class Cat {
+            constructor(name, speed) {
+                this.name = name;
+                this.speed = speed;
+            }
+        }
+
+        let dog1 = new Dog('Bun', 30);
+        let cat1 = new Cat('Tom', 20);
+
+        // dog1.sua();
+        // dog1.catchCat(cat1)
+
+
+        // Bài 3: Tạo một đối tượng User chưa thông tin người dùng 
+        // bao gồm: tên, email, địa chỉ, điện thoại.
+        // Tạo class Admin kế thừa từ class User. 
+        // Thêm thuộc tính “role” vào 2 đối tượng Admin(value = 1) và 
+        // User(value = 0)
+
+
+
+        // Thêm 1 nick admin vào mảng danh sách người dùng.
+        // Sau đó tìm kiếm toàn bộ thông tin các tài khoản là admin 
+        // và in ra
+
+        class User {
+            role = 0;
+            constructor(name, email, address, phoneNumber) {
+                this.name = name;
+                this.email = email;
+                this.address = address;
+                this.phoneNumber = phoneNumber;
+            }
+        }
+
+        class Admin extends User {
+            role = 1;
+            constructor(name, email, address, phoneNumber) {
+                super(name, email, address, phoneNumber)
+            }
+        }
+
+        // Tạo danh sách người dùng(dạng mảng) và thêm vào 3 user, 1 admin
+        let user1 = new User('A', 'vanA@gmail.com', 'Hà Nội', '098-****-123')
+        let user2 = new User('B', 'vanB@gmail.com', 'Nam Định', '097-****-234')
+        let user3 = new User('C', 'vanC@gmail.com', 'Sơn La', '096-****-345')
+        let userAd = new Admin('Ad', 'vanAd@gmail.com', 'Hà Nam', '095-****-456')
+
+        let lop = [];
+        lop.push(user1, user2, user3, userAd);
+        // console.log(lop);
+
+        // Xóa người dùng thông qua tên của họ(không xóa được admin)
+        // let del = prompt('Nhập vào tên muốn xóa')
+        // let check = false;
+        // for (i = 0; i < lop.length; i++) {
+        //     if (del == lop[i].name) {
+        //         if (lop[i].role == 0) {
+        //             check = true;
+        //             lop.splice(i, 1);
+        //         } else if (lop[i].role == 1) {
+        //             console.log('Không thể xóa phần tử trong Admin');
+        //         }
+        //     }
+        //     if (check) {
+        //         'Không có tên này trong dữ liệu'
+        //     }
+        // }
+        // console.log(lop);
+
+        // Sửa thông tin người dùng thông qua id(không sửa được thông tin admin)
+        // let idChange = prompt(`Nhập id thông tin người dùng muốn sửa từ 0-${lop.length - 1}`);
+
+        // if (lop[idChange].role == 0) {
+        //     let a = prompt('Nhập giá trị muốn sửa name/email/address/phoneNumber')
+        //     if (a == 'name' || a == 'email' || a == 'address' || a == 'phoneNumber') {
+        //         lop[idChange][a] = prompt('Nhập nội dung muốn sửa')
+        //         console.log(lop);
+        //     }
+        // } else {
+        //     console.log('Không được sửa dữ liệu admin');
+        // }
+
+        // Thêm 1 nick admin vào mảng danh sách người dùng.
+        // Sau đó tìm kiếm toàn bộ thông tin các tài khoản là admin 
+        // và in ra
+
+        let userAd2 = new Admin('Ad2', 'vanAd2@gmail.com', 'Sơn La', '095-****-456')
+        lop.push(userAd2);
+        let checkAdmin = lop.filter((value) => {
+            return value.role == 1;
+        })
+        // console.log(checkAdmin);
+
+
+        // Bài 4: Tạo dữ liệu để có thể in ra nội dung dưới đây:
+        // Cho người dùng nhập vào 5 chữ cái C / R / U / D / E
+
+        let id = 1; // biến toàn cục giúp tự tăng id 
+        class Course {
+            complete = false; //mặc định lúc mới tạo khóa học thì trạng thái hoàn thành là false
+            constructor(name) {
+                this.id = id++;
+                this.name = name;
+            }
+        }
+
+        let course1 = new Course('HTML');
+        let course2 = new Course('CSS');
+        let course3 = new Course('Basic of javascript');
+        let course4 = new Course('Node package Manager (npm)');
+        let course5 = new Course('Git');
+
+        let course = [];
+        course.push(course1, course2, course3, course4, course5);
+
+        // console.log(course);
+
+        while (true) { // vòng lặp vĩnh cửu
+            let nhapVao = prompt('Nhập vào C/R/U/D để hành động E để kết thúc')
+
+            // C - Cho người dùng nhập vào khóa học mới và trạng thái hoàn thành.
+            // Sau đó cập nhật lại mảng dữ liệu và in ra giống như trên
+            if (nhapVao == 'c') {
+                let newNameCourse = prompt('Tạo 1 khóa học mới');
+                let newCourse = new Course(newNameCourse)
+                course.push(newCourse);
+                console.log(course);
+            }
+            else if (nhapVao == 'r') {
+                // R - In ra toàn bộ các khóa học theo mẫu trên
+                console.log(course);
+            }
+            else if (nhapVao == 'u') {
+                // U - Hỏi người dùng vị trí update khóa học.
+                // Nếu tồn tại cho người dùng nhập vào tên muốn update 
+                // và trạng thái mới.Update xong in lại như trên
+                let updateCourse;
+                do {
+                    updateCourse = +prompt(`nhập vị trí bạn muốn sửa 0-${course.length - 1}`)
+                } while (updateCourse < 0 || updateCourse > course.length - 1);
+
+                let newName = prompt('Nhập vào tên muốn update')
+                let newComplete;
+                // Update
+                newName = course[updateCourse].name;
+                // bắt người dùng nhập đúng các giá trị 0(false) - 1(true)
+                do {
+                    newComplete = prompt('Nhập trạng thái hoàn thành bạn muốn cập nhật 0:False / 1:True')
+                } while (newComplete != 0 || newComplete != 1);
+                // gán lại giá trị của newComplete bằng giá trị (0/1) mà người dùng nhập
+                if (newComplete) {
+                    course[updateCourse].name = true;
+                } else {
+                    course[updateCourse].name = false;
+                }
+                console.log(course);
+            }
+            else if (nhapVao == 'd') {
+                // D - Hỏi người dùng vị trị của khóa học muốn xóa.
+                // Tiến hành xóa và in ra như trên
+                let del;
+                do {
+                    del = +prompt(`Nhập vào vị trí muốn xóa 0-${course.length - 1}`);
+                } while (del < 0 || del > course.length)
+                course.splice(del, 1)
+                console.log(course);
+            }
+            else if (nhapVao == 'e' || nhapVao == undefined) {
+                // E - Biến chương trình thành vòng lặp vĩnh cứu 
+                // và khi người dùng nhập vào E thì sẽ thoát khỏi chương trình 
+                // và thông báo “Cảm ơn bạn đã đến với Rikkei Academy”
+                alert('Cảm ơn bạn đã đến với Rikkei Academy');
+                break;
+            }
+        }
+
+
+
+        // Bài 5:
+        // C - Cho người dùng nhập vào tên sản phẩm muốn mua.
+        // Nếu có thêm chúng vào carts khi đó count trong stores của sản phẩm
+        // đó giảm đi 1
+        // R - In ra toàn bộ các sản phẩm trong stores và carts
+        // U - Hỏi người dùng vị trí update trong carts.
+        // Nếu tồn tại cho người dùng nhập vào số lượng muốn thay đổi
+        // và khi đó count trong stores cũng cập nhật theo.
+        // Update xong in lại stores và carts
+        // D - Hỏi người dùng vị trị của sản phẩm muốn xóa trong carts.
+        // Tiến hành xóa và in ra lại
+        // E - Biến chương trình thành vòng lặp vĩnh cứu
+        // và khi người dùng nhập vào E thì sẽ thoát khỏi chương trình
+        // và thông báo “Cảm ơn bạn đã đến với Rikkei Stores”
+
+        // let stores = [
+        //     { id: 1, name: "Milk", count: 100 },
+        //     { id: 2, name: "Yakult", count: 100 },
+        //     { id: 3, name: "Butter", count: 100, }
+        // ];
+
+        // let carts = [];
+
+        // //Hàm thêm mới sản phẩm vào giỏ hàng
+        // while (true) {
+        //     let choise = prompt('Nhập vào C/R/U/D để hành động E để kết thúc')
+
+
+        //     if (choise == 'E') {
+        //         alert('Cảm ơn bạn đã đến với Rikkei Stores')
+        //         break;
+        //     }
+        // }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

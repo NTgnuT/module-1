@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Rat {
+            constructor(name, weight, speed) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+                this.live = true;
+                this.keu = () => {
+                    console.log(this.name + ' chít,chít');
+                }
+            }
+        }
+
+        class Cat {
+            constructor(name, weight, maxSpeed) {
+                this.name = name;
+                this.weight = weight;
+                this.maxSpeed = maxSpeed;
+                this.keu = () => {
+                    console.log(this.name + ' meo,meo');
+                }
+
+                this.catchMouse = (rat) => {
+                    if (this.maxSpeed > rat.speed) {
+                        rat.alive = false;
+                        console.log(`${this.name} đã bắt được ${rat.name}`);
+                    } else {
+                        console.log(`${this.name} không bắt được ${rat.name}`);
+                    }
+                }
+
+                this.eatMouse = (rat) => {
+                    if (rat.alive) {
+                        console.log(`${this.name} không ăn được ${rat.name}`);
+                    } else {
+                        console.log(`${this.name} đã ăn được ${rat.name}`);
+                        this.weight += rat.weight;
+                        console.log(this.weight);
+                    }
+                }
+
+            }
+        }
+
+
+        let cat = new Cat('Tom', 5, 4);
+        let mouse = new Rat('Rat', 1, 5);
+
+        cat.keu();
+        mouse.keu();
+
+        cat.catchMouse(mouse)
+        // cat.eatMouse(mouse)
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

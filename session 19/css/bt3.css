@@ -1,0 +1,84 @@
+/* Bài 2 */
+/* #box1 {
+    width: 500px;
+    height: 250px;
+    background-color: rgb(87, 86, 86);
+    position: absolute;
+}
+
+
+#box2 {
+    position: relative;
+    width: 400px;
+    height: 60px;
+    top: 90px;
+    left: 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+}
+
+#close {
+    height: 30px;
+} */
+
+
+
+/* Bài 3
+#box {
+    width: 300px;
+    height: 150px;
+    background-color: lightskyblue;
+}
+
+#box2 {
+    display: flex;
+}
+
+#yellow {
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+    background-color: yellow;
+}
+
+#green {
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+    background-color: greenyellow;
+}
+
+#gray {
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+    background-color: lightgray;
+} */
+
+
+
+/* Bài 4: */
+/* #box1 {
+    width: 300px;
+    height: 120px;
+    background-color: lightgray;
+    text-align: center;
+    position: absolute;
+}
+
+#box2 {
+    width: 80px;
+    position: relative;
+    top: 80px;
+    left: 110px;
+    background-color: grey;
+} */
+
+/* Bài 5: */
+#box {
+    width: 500px;
+    height: 200px;
+    background-color: lightgray;
+}

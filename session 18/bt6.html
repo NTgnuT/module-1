@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Bài 1: Tạo một đối tượng chứa thông tin về một người bao gồm 
+        // tên, tuổi, địa chỉ và số điện thoại.
+        // Sau đó truy xuất các thuộc tính của đối tượng trên
+
+        let info = {
+            Name: 'Nguyễn Văn A',
+            Age: 20,
+            Address: 'Hà Nội',
+            PhoneNumber: '098-*******'
+        }
+
+        info.Name = 'Nguyễn Văn B';
+        console.log(info);
+
+
+        // Bài 2: Viết chương trình tạo đối tượng student 
+        // có cặp key và value tương ứng như dưới đây, 
+        // sau đó khởi tạo đối tượng newStudent có các thuộc tính tương tự
+        // (value tự điền).Sau đó tạo mảng “students” để chứa chúng.
+        // uối cùng truy xuất các thuộc tính của đối tượng “newStudent” 
+        // sau khi thêm vào mảng “students”
+
+        let student = {
+            id: '1',
+            name: 'Nguyễn Văn A',
+            gender: 'nam',
+            age: 20,
+            mark: 7,
+        }
+
+        let newStudent = {
+            id: '2',
+            name: 'Nguyễn Văn B',
+            gender: 'nam',
+            age: 22,
+            mark: 9,
+        }
+
+        let students = [];
+        students.push(student, newStudent);
+        console.log(students);
+
+
+        // Bài 3: Với dữ liệu từ bài 2 hãy tìm ra học sinh có điểm 
+        // trung bình cao hơn và in ra toàn bộ thông tin của học sinh đó
+        if (students[0].mark > students[1].mark) {
+            console.log(students[0]);
+        } else {
+            console.log(students[1]);
+        }
+
+
+        // Bài 4: Tạo thêm đối tượng “newStudent2” với các thuộc tính tương tự 
+        // như đối tượng “newStudent” với value bất kỳ.
+        // Sau đó thêm vào mảng “students” (ở bài 2). 
+        // Tính điểm trung bình của các học sinh trong mảng students trên.
+        // Nếu trên 7.5 thì đánh giá lớp khá, 
+        // từ 5 đến 7.5 thì đánh giá lớp trung bình, dưới 5 là lớp yếu
+
+        let newStudent2 = {
+            id: '3',
+            name: 'Nguyễn Văn C',
+            gender: 'nam',
+            age: 21,
+            mark: 5,
+        }
+        students.push(newStudent2);
+        let sum = 0;
+        for (i = 0; i < students.length; i++) {
+            sum += students[i].mark
+        }
+        let dtb = sum / students.length;
+        console.log(dtb);
+        if (dtb > 7.5) {
+            console.log('Lớp khá');
+        } else if (dtb >= 5) {
+            console.log('Lớp trung bình');
+        } else {
+            console.log('Lớp yếu');
+        }
+    </script>
+</body>
+
+</html>
