@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bt1.css">
+</head>
+
+<body>
+    <div id="head">
+        <h1>My To Do List</h1>
+        <input type="text" id="title" placeholder="Title...">
+        <button type="button" id="add" onclick="addNewCategory()">Add</button>
+    </div>
+
+    <div class="card-body">
+        <table id="table1s">
+            <thead>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Edit</td>
+                <td>Delete</td>
+            </thead>
+            <tbody id="categories">
+                <!-- <tr>
+                    <td>1</td>
+                    <td>Hit the gym</td>
+                    <td>
+                        <button type="button" id="edit">Edit</button>
+                    </td>
+                    <td>
+                        <button type="button" id="delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Pay bills</td>
+                    <td>
+                        <button type="button" id="edit">Edit</button>
+                    </td>
+                    <td>
+                        <button type="button" id="delete">Delete</button>
+                    </td>
+                </tr> -->
+
+                <div id="addModal">
+                    <label for="category_name">New Name</label>
+                    <input type="text" id="category_name">
+                    <button type="button">Close</button>
+                    <button type="button">Add</button>
+                </div>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="js/bt1.js"></script>
+</body>
+
+</html>

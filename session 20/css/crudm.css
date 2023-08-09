@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 1200px;
+    margin: 50px auto;
+    position: relative;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+th,
+td {
+    padding: 5px 0;
+    width: 200px;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+#table_body img {
+    width: 50px;
+    height: 50px;
+}
+
+.hide {
+    display: none;
+}
+
+.hide2 {
+    display: none;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 60px;
+}
+
+.add_product {
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    font-weight: bolder;
+    color: white;
+    background-color: lightskyblue;
+
+}
+
+/* .add_product:hover {
+    background-color: lightskyblue;
+    color: white;
+} */
+
+#input_search {
+    width: 250px;
+    height: 30px;
+    border: none;
+    border-bottom: 0.5px solid black
+}
+
+.btn_tim_kiem {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: lightskyblue;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    color: white;
+}
